@@ -1,0 +1,41 @@
+@model User
+
+@{
+    ViewBag.Title = "Добавить читателья";
+    Layout = "_Layout";
+}
+
+<h2>Добавить нового читателья</h2>
+
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Create" asp-controller="Users" method="post">
+            <div class="form_row">
+                <label for="">
+                    Имя
+                    <input asp-for="FirstName" type="text">
+                </label>
+            </div>
+            <div class="form_row">
+                <label for="">
+                    Фамиля
+                    <input asp-for="LastName" type="text">
+                </label>
+            </div>
+            <div class="form_row">
+                <label for="">
+                    Email
+                    <input asp-for="Email" type="text">
+                </label>
+            </div>
+            <div class="form_row">
+                            <label for="">
+                                Номер телефона
+                                <input asp-for="PhoneNumber" type="text">
+                            </label>
+                        </div>
+            <button type="submit"> Добавить</button>
+        </form>
+    </div>
+</div>

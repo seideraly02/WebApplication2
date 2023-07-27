@@ -1,0 +1,37 @@
+@model List<User>
+
+@{
+    ViewBag.Title = "Список читателей";
+    Layout = "_Layout";
+}
+
+<h2>Список читателей</h2>
+<div class="table_section">
+        <a asp-action="Create" asp-controller="Users">добавить Читателья</a>
+        @if (@Model.Count == 0)
+        {
+            <p>Список пуст</p>
+        }
+        else
+        {
+            <table class="custom_table" style="width: 100%">
+                <tr>
+                    <td>Id</td>
+                    <td>Имя</td>
+                    <td>Фамиля</td>
+                    <td>Email</td>
+                    <td>Номер телефона</td>
+                </tr>
+                @foreach (var user in @Model)
+                {
+                    <tr>
+                        <td>@user.Id</td>
+                        <td>@user.FirstName</td>
+                        <td>@user.LastName</td>
+                        <td>@user.Email</td>
+                        <td>@user.PhoneNumber</td>
+                    </tr>
+                }
+            </table>
+        }
+    </div>
